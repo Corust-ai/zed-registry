@@ -33,7 +33,18 @@
 
    Place an SVG icon at `<agent-id>/icon.svg`.
 
-   > **Warning**: Icons must be **16x16 SVG**. Larger icons may be scaled down and lose quality. Non-square icons may display incorrectly.
+   **Icon requirements:**
+   - **16x16 SVG** - larger icons may be scaled down and lose quality
+   - **Monochrome using `currentColor`** - enables theme support (light/dark mode)
+
+   Example:
+   ```svg
+   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+     <path fill="currentColor" d="M..."/>
+   </svg>
+   ```
+
+   > **Warning**: Icons with hardcoded colors (`fill="#FF0000"`, `fill="red"`, etc.) will fail validation. Use `fill="currentColor"` or `fill="none"` only.
 
 5. **Submit a Pull Request**
 
